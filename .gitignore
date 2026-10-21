@@ -1,0 +1,6 @@
+# Input (410 MB GeoPackage) and generated output – published as packages, not in git
+data/
+out/
+*.gpkg
+*.pmtiles
+__pycache__/

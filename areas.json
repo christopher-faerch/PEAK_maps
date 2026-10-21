@@ -1,0 +1,10 @@
+{
+  "schema": 1,
+  "comment": "Ski areas PEAK builds offline map packages for. 'osm' is the stable key (OpenSkiData feature ids change every build). The bbox is computed from the area's runs and lifts by scripts/extract_area.py.",
+  "areas": [
+    { "slug": "les-3-vallees", "name": "Les Trois Vallées", "country": "FR", "osm": "relation/3545276", "terrain_max_zoom": 13 },
+    { "slug": "soelden", "name": "Sölden", "country": "AT", "osm": "relation/15961562", "terrain_max_zoom": 13 },
+    { "slug": "ski-arlberg", "name": "Ski Arlberg (St. Anton, Lech, Zürs)", "country": "AT", "osm": "way/539407909", "terrain_max_zoom": 13 },
+    { "slug": "hemsedal", "name": "Hemsedal", "country": "NO", "osm": "relation/2150871", "terrain_max_zoom": 13 }
+  ]
+}
