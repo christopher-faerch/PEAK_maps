@@ -34,7 +34,11 @@
       "name": "Hemsedal",
       "country": "NO",
       "osm": "relation/2150871",
-      "terrain_max_zoom": 13
+      "terrain_max_zoom": 13,
+      "status": {
+        "source": "fnugg",
+        "id": 5
+      }
     },
     {
       "slug": "les-portes-du-soleil",
@@ -300,105 +304,165 @@
       "name": "Trysil",
       "country": "NO",
       "osm": "way/1210019615",
-      "terrain_max_zoom": 13
+      "terrain_max_zoom": 13,
+      "status": {
+        "source": "fnugg",
+        "id": 2
+      }
     },
     {
       "slug": "oppdal-skisenter",
       "name": "Oppdal Skisenter",
       "country": "NO",
       "osm": "way/1359304443",
-      "terrain_max_zoom": 13
+      "terrain_max_zoom": 13,
+      "status": {
+        "source": "fnugg",
+        "id": 78
+      }
     },
     {
       "slug": "hafjell",
       "name": "Hafjell",
       "country": "NO",
       "osm": "way/268326089",
-      "terrain_max_zoom": 13
+      "terrain_max_zoom": 13,
+      "status": {
+        "source": "fnugg",
+        "id": 12
+      }
     },
     {
       "slug": "kvitfjell",
       "name": "Kvitfjell",
       "country": "NO",
       "osm": "way/1466199986",
-      "terrain_max_zoom": 13
+      "terrain_max_zoom": 13,
+      "status": {
+        "source": "fnugg",
+        "id": 13
+      }
     },
     {
       "slug": "ski-geilo",
       "name": "Ski Geilo",
       "country": "NO",
       "osm": "relation/17004845",
-      "terrain_max_zoom": 13
+      "terrain_max_zoom": 13,
+      "status": {
+        "source": "fnugg",
+        "id": 4
+      }
     },
     {
       "slug": "hovden-alpinsenter",
       "name": "Hovden Alpinsenter",
       "country": "NO",
       "osm": "way/1465306137",
-      "terrain_max_zoom": 13
+      "terrain_max_zoom": 13,
+      "status": {
+        "source": "fnugg",
+        "id": 11
+      }
     },
     {
       "slug": "myrkdalen",
       "name": "Myrkdalen",
       "country": "NO",
       "osm": "way/1252351535",
-      "terrain_max_zoom": 13
+      "terrain_max_zoom": 13,
+      "status": {
+        "source": "fnugg",
+        "id": 8
+      }
     },
     {
       "slug": "voss-resort-fjellheisar",
       "name": "Voss Resort Fjellheisar",
       "country": "NO",
       "osm": "relation/4107373",
-      "terrain_max_zoom": 13
+      "terrain_max_zoom": 13,
+      "status": {
+        "source": "fnugg",
+        "id": 17
+      }
     },
     {
       "slug": "strandafjellet",
       "name": "Strandafjellet",
       "country": "NO",
       "osm": "way/391682955",
-      "terrain_max_zoom": 13
+      "terrain_max_zoom": 13,
+      "status": {
+        "source": "fnugg",
+        "id": 21
+      }
     },
     {
       "slug": "hogevarde",
       "name": "Høgevarde",
       "country": "NO",
       "osm": "way/257732538",
-      "terrain_max_zoom": 13
+      "terrain_max_zoom": 13,
+      "status": {
+        "source": "fnugg",
+        "id": 133
+      }
     },
     {
       "slug": "gaustablikk-skisenter",
       "name": "Gaustablikk Skisenter",
       "country": "NO",
       "osm": "way/577833539",
-      "terrain_max_zoom": 13
+      "terrain_max_zoom": 13,
+      "status": {
+        "source": "fnugg",
+        "id": 14
+      }
     },
     {
       "slug": "grong-skisenter",
       "name": "Grong skisenter",
       "country": "NO",
       "osm": "relation/9292730",
-      "terrain_max_zoom": 13
+      "terrain_max_zoom": 13,
+      "status": {
+        "source": "fnugg",
+        "id": 71
+      }
     },
     {
       "slug": "tyin-filefjell",
       "name": "Tyin-Filefjell",
       "country": "NO",
       "osm": "way/1257436350",
-      "terrain_max_zoom": 13
+      "terrain_max_zoom": 13,
+      "status": {
+        "source": "fnugg",
+        "id": 73
+      }
     },
     {
       "slug": "skeikampen-alpinsenter",
       "name": "Skeikampen Alpinsenter",
       "country": "NO",
       "osm": "relation/7561888",
-      "terrain_max_zoom": 13
+      "terrain_max_zoom": 13,
+      "status": {
+        "source": "fnugg",
+        "id": 32
+      }
     },
     {
       "slug": "bjorli-skisenter",
       "name": "Bjorli Skisenter",
       "country": "NO",
       "osm": "relation/7909071",
-      "terrain_max_zoom": 13
+      "terrain_max_zoom": 13,
+      "status": {
+        "source": "fnugg",
+        "id": 177
+      }
     },
     {
       "slug": "uvdal-alpinpark",
@@ -412,21 +476,33 @@
       "name": "Nesfjellet Alpinsenter",
       "country": "NO",
       "osm": "relation/10819804",
-      "terrain_max_zoom": 13
+      "terrain_max_zoom": 13,
+      "status": {
+        "source": "fnugg",
+        "id": 72
+      }
     },
     {
       "slug": "vassfjellet-skisenter",
       "name": "Vassfjellet skisenter",
       "country": "NO",
       "osm": "way/22923382",
-      "terrain_max_zoom": 13
+      "terrain_max_zoom": 13,
+      "status": {
+        "source": "fnugg",
+        "id": 176
+      }
     },
     {
       "slug": "eikedalen-skisenter",
       "name": "Eikedalen skisenter",
       "country": "NO",
       "osm": "relation/5225810",
-      "terrain_max_zoom": 13
+      "terrain_max_zoom": 13,
+      "status": {
+        "source": "fnugg",
+        "id": 23
+      }
     }
   ]
 }

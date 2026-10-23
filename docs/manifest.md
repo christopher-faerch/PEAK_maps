@@ -45,5 +45,11 @@ File names carry the build date, so a new build is a new file and caches can kee
 | `attribution` | Shown on the map, also offline |
 | `min_app_version` | Oldest app that can read the package |
 
+## The area index
+
+`index.json` lists every published area: `slug`, `name`, `country`, `bbox`, `run_km`, `lifts`, `version`, `bytes`,
+`data_date` – and, when the area has one, its lift-status source from `areas.json`: `"status": {"source": "fnugg",
+"id": 2}`. Only a source PEAK knows and a number; PEAK builds the source's URL itself and never takes one from here.
+
 **Publishing rule:** a build that loses more than 10 % of an area's runs or lifts compared with the previous version
 is not published. OpenSkiData's format is not stable, so the schema is checked on every import.

@@ -8,6 +8,8 @@ Usage:
       The resort's own piste map (areas.json 'official_map') is always linked. Its image (OUT_DIR/SLUG/official.webp,
       rendered from the resort's PDF) goes into the package only when 'image_permission' is true – the resort's written
       permission – or with --local, for a package that never leaves the developer's machine.
+      The area's lift-status source (areas.json 'status', e.g. {"source": "fnugg", "id": 2}) goes into its index entry,
+      where PEAK reads it; only the source's name and a number – the server builds the URL itself.
 Manifest format: docs/manifest.md.
 """
 import datetime
@@ -100,6 +102,7 @@ def main():
         "slug": slug, "name": area["name"], "country": area.get("country", ""), "bbox": area["bbox"],
         "run_km": area["runs"]["length_km"], "lifts": area["lifts"]["count"], "version": manifest["version"],
         "bytes": sum(f["bytes"] for f in files), "data_date": date,
+        **({"status": {"source": cfg["status"]["source"], "id": int(cfg["status"]["id"])}} if cfg.get("status") else {}),
     }]
     index["areas"].sort(key=lambda a: a["name"])
     with open(index_path, "w", encoding="utf-8", newline="\n") as f:
