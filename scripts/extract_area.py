@@ -127,16 +127,26 @@ def main():
     for r in runs:
         g = gpkg_geometry(r["geometry"])
         r["_km"] = length_km(g)
+        heights = [float(h) for h in (r["elevation_profile_heights"] or "").split(",") if h]
         feats.append({"type": "Feature", "geometry": g, "properties": {
             "kind": "run", "name": r["name"], "ref": r["ref"], "difficulty": r["difficulty"],
-            "grooming": r["grooming"], "osm": first_osm_id(r["sources"])}})
+            "grooming": r["grooming"], "length_m": round(r["_km"] * 1000),
+            # the profile runs downhill along the line: top = highest, bottom = lowest point
+            "ele_top": round(max(heights)) if heights else None, "ele_bottom": round(min(heights)) if heights else None,
+            "osm": first_osm_id(r["sources"])}})
     for r in run_areas:
         feats.append({"type": "Feature", "geometry": gpkg_geometry(r["geometry"]), "properties": {
             "kind": "run_area", "name": r["name"], "difficulty": r["difficulty"], "osm": first_osm_id(r["sources"])}})
     for r in lifts:
-        feats.append({"type": "Feature", "geometry": gpkg_geometry(r["geometry"]), "properties": {
+        g = gpkg_geometry(r["geometry"])
+        feats.append({"type": "Feature", "geometry": g, "properties": {
             "kind": "lift", "name": r["name"], "ref": r["ref"], "ref_fr_cairn": r["ref_fr_cairn"], "lift_type": r["lift_type"],
-            "occupancy": r["occupancy"], "capacity": r["capacity"], "duration": r["duration"], "osm": first_osm_id(r["sources"])}})
+            "occupancy": r["occupancy"], "capacity": r["capacity"], "duration": r["duration"],
+            "length_m": round(length_km(g) * 1000), "osm": first_osm_id(r["sources"])}})
+        if g["type"] == "LineString":  # the lift's ends as its stations (OSM draws aerialways bottom to top)
+            for pos, pt in (("bottom", g["coordinates"][0]), ("top", g["coordinates"][-1])):
+                feats.append({"type": "Feature", "geometry": {"type": "Point", "coordinates": pt},
+                              "properties": {"kind": "lift_end", "position": pos, "osm": first_osm_id(r["sources"])}})
     for r in stations:
         feats.append({"type": "Feature", "geometry": gpkg_geometry(r["geometry"]), "properties": {
             "kind": "station", "position": r["position"], "name": r["name"], "osm": first_osm_id(r["sources"])}})
@@ -165,7 +175,7 @@ def main():
 
     named = [r for r in runs if r["name"]]
     report = {
-        "slug": slug, "name": area_cfg["name"], "osm": area_cfg["osm"], "openskidata_name": area["name"],
+        "slug": slug, "name": area_cfg["name"], "country": area_cfg.get("country", ""), "osm": area_cfg["osm"], "openskidata_name": area["name"],
         "bbox": bbox, "elevation": [area["min_elevation"], area["max_elevation"]],
         "runs": {
             "count": len(runs), "length_km": round(sum(r["_km"] for r in runs)), "areas": len(run_areas),

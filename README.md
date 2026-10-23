@@ -7,8 +7,9 @@ packages is derived from OpenStreetMap, so it is a *Derivative Database* under t
 [Open Database License (ODbL) 1.0](https://opendatacommons.org/licenses/odbl/1-0/). This repository is how PEAK meets
 section 4.6 of the ODbL: it publishes the method that produces the derived data, free of charge.
 
-> **Status (21 October 2026):** pilot. The extraction and measurement scripts work for the four pilot areas below.
-> Building the vector tiles and publishing packages is not implemented yet.
+> **Status (23 October 2026):** packages are built end to end for 60 ski areas – the 20 largest in France, Austria and
+> Norway (see [Areas](#areas)). Publishing them to PEAK's server is not automated yet. The ski layer is GeoJSON for
+> now; vector tiles (`<area>-ski-<date>.pmtiles`) come later without a change to the manifest's format.
 
 ## What a package contains
 
@@ -32,13 +33,22 @@ section 4.6 of the ODbL: it publishes the method that produces the derived data,
    - write `overlay.geojson` and a data-quality report `area.json`.
 3. `scripts/measure_package.py`: read only the headers and directories of the Protomaps build and of Mapterhorn's
    archives with HTTP Range requests, and sum the tile sizes inside the bounding box. No tiles are downloaded.
-4. *(Not implemented yet)* Build `overlay.geojson` into vector tiles, cut the basemap and terrain with
-   `pmtiles extract --bbox --maxzoom`, write the manifest with SHA-256 checksums and publish.
+4. `scripts/build_packages.py`: for each area, run step 2, cut the basemap of the newest daily Protomaps build (zoom
+   0–15) and Mapterhorn's terrain (the planet file to zoom 12, and each regional zoom-13 file the area touches) with
+   `pmtiles extract --bbox --maxzoom`, then `scripts/write_manifest.py`: dated file names, SHA-256 checksums,
+   `manifest.json` and the area's entry in the packages' `index.json`.
 
-Everything runs on the Python standard library. No package needs installing.
+Choosing areas: `scripts/rank_areas.py` ranks the operating ski areas of some countries by their length of downhill
+runs. It leaves out an area when most of its runs belong to a bigger area ranked above it (Courchevel inside Les Trois
+Vallées), leaves out lift-pass alliances of separate areas (Ski amadé – its members are ranked instead), and puts an
+area across a border in the country where most of its runs are.
+
+Everything runs on the Python standard library, plus the [pmtiles CLI](https://github.com/protomaps/go-pmtiles) for
+cutting archives. No package needs installing.
 
 ```bash
-python -I scripts/extract_area.py data/openskidata.gpkg areas.json les-3-vallees out
+python -I scripts/rank_areas.py data/openskidata.gpkg 20 FR AT NO > out/ranking.json
+python -I scripts/build_packages.py data/openskidata.gpkg areas.json out ../packages pmtiles hemsedal trysil
 python -I scripts/measure_package.py out/les-3-vallees/area.json 20261021 13
 ```
 
@@ -59,6 +69,15 @@ covers 539 of the 600 km the resort publishes, about 90 %. Red and black runs ar
 
 Where stations are missing, the app uses the first and last point of the lift line, since OSM draws aerialways
 bottom to top.
+
+## Areas
+
+`areas.json` lists the areas PEAK builds packages for, by OpenStreetMap id. They are added in waves:
+
+1. **France, Austria and Norway** – the 20 largest in each (23 October 2026).
+2. Italy, Germany and Sweden.
+3. The smaller countries of Europe (Switzerland, Andorra, Spain, Slovenia, Finland and others).
+4. The United States.
 
 ## Licences
 

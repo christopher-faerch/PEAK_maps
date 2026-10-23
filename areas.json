@@ -1,10 +1,432 @@
 {
   "schema": 1,
-  "comment": "Ski areas PEAK builds offline map packages for. 'osm' is the stable key (OpenSkiData feature ids change every build). The bbox is computed from the area's runs and lifts by scripts/extract_area.py.",
+  "comment": "Ski areas PEAK builds offline map packages for. 'osm' is the stable key (OpenSkiData feature ids change every build). The bbox is computed from the area's runs and lifts by scripts/extract_area.py. 'official_map' is where the resort publishes its own piste map: PEAK links to it. The map itself (copyright the resort) is only put in a package with the resort's written permission ('image_permission').",
   "areas": [
-    { "slug": "les-3-vallees", "name": "Les Trois Vallées", "country": "FR", "osm": "relation/3545276", "terrain_max_zoom": 13 },
-    { "slug": "soelden", "name": "Sölden", "country": "AT", "osm": "relation/15961562", "terrain_max_zoom": 13 },
-    { "slug": "ski-arlberg", "name": "Ski Arlberg (St. Anton, Lech, Zürs)", "country": "AT", "osm": "way/539407909", "terrain_max_zoom": 13 },
-    { "slug": "hemsedal", "name": "Hemsedal", "country": "NO", "osm": "relation/2150871", "terrain_max_zoom": 13 }
+    {
+      "slug": "les-3-vallees",
+      "name": "Les Trois Vallées",
+      "country": "FR",
+      "osm": "relation/3545276",
+      "terrain_max_zoom": 13,
+      "official_map": {
+        "credit": "© Les 3 Vallées",
+        "page_url": "https://www.les3vallees.com/en/guide/the-world-s-largest-ski-area/ski-area-map",
+        "pdf_url": "https://www.les3vallees.com/media/download/plan-3-vallees-pdf.pdf",
+        "image_permission": false
+      }
+    },
+    {
+      "slug": "soelden",
+      "name": "Sölden",
+      "country": "AT",
+      "osm": "relation/15961562",
+      "terrain_max_zoom": 13
+    },
+    {
+      "slug": "ski-arlberg",
+      "name": "Ski Arlberg (St. Anton, Lech, Zürs)",
+      "country": "AT",
+      "osm": "way/539407909",
+      "terrain_max_zoom": 13
+    },
+    {
+      "slug": "hemsedal",
+      "name": "Hemsedal",
+      "country": "NO",
+      "osm": "relation/2150871",
+      "terrain_max_zoom": 13
+    },
+    {
+      "slug": "les-portes-du-soleil",
+      "name": "Les Portes du Soleil",
+      "country": "FR",
+      "osm": "relation/19457834",
+      "terrain_max_zoom": 13
+    },
+    {
+      "slug": "paradiski",
+      "name": "Paradiski",
+      "country": "FR",
+      "osm": "way/1227560922",
+      "terrain_max_zoom": 13
+    },
+    {
+      "slug": "evasion-mont-blanc",
+      "name": "Evasion Mont Blanc",
+      "country": "FR",
+      "osm": "relation/17261841",
+      "terrain_max_zoom": 13
+    },
+    {
+      "slug": "tignes-val-d-isere",
+      "name": "Tignes - Val d'Isère",
+      "country": "FR",
+      "osm": "way/45421423",
+      "terrain_max_zoom": 13
+    },
+    {
+      "slug": "espace-haute-maurienne-vanoise",
+      "name": "Espace Haute Maurienne Vanoise",
+      "country": "FR",
+      "osm": "relation/17261990",
+      "terrain_max_zoom": 13
+    },
+    {
+      "slug": "espace-diamant",
+      "name": "Espace Diamant",
+      "country": "FR",
+      "osm": "relation/5993384",
+      "terrain_max_zoom": 13
+    },
+    {
+      "slug": "espace-lumiere",
+      "name": "Espace Lumière",
+      "country": "FR",
+      "osm": "relation/19325191",
+      "terrain_max_zoom": 13
+    },
+    {
+      "slug": "le-grand-massif",
+      "name": "Le Grand Massif",
+      "country": "FR",
+      "osm": "relation/5994258",
+      "terrain_max_zoom": 13
+    },
+    {
+      "slug": "alpe-d-huez-grand-domaine",
+      "name": "Alpe d'Huez Grand Domaine",
+      "country": "FR",
+      "osm": "way/45438982",
+      "terrain_max_zoom": 13
+    },
+    {
+      "slug": "serre-chevalier",
+      "name": "Serre-Chevalier",
+      "country": "FR",
+      "osm": "relation/3160540",
+      "terrain_max_zoom": 13
+    },
+    {
+      "slug": "les-sybelles",
+      "name": "Les Sybelles",
+      "country": "FR",
+      "osm": "relation/6960124",
+      "terrain_max_zoom": 13
+    },
+    {
+      "slug": "galibier-thabor",
+      "name": "Galibier-Thabor",
+      "country": "FR",
+      "osm": "relation/5731035",
+      "terrain_max_zoom": 13
+    },
+    {
+      "slug": "foret-blanche-vars-risoul",
+      "name": "Forêt Blanche : Vars/Risoul",
+      "country": "FR",
+      "osm": "relation/17247901",
+      "terrain_max_zoom": 13
+    },
+    {
+      "slug": "le-grand-domaine",
+      "name": "Le Grand Domaine",
+      "country": "FR",
+      "osm": "relation/5993118",
+      "terrain_max_zoom": 13
+    },
+    {
+      "slug": "les-deux-alpes",
+      "name": "Les Deux Alpes",
+      "country": "FR",
+      "osm": "way/45146739",
+      "terrain_max_zoom": 13
+    },
+    {
+      "slug": "la-clusaz",
+      "name": "La Clusaz",
+      "country": "FR",
+      "osm": "relation/5994241",
+      "terrain_max_zoom": 13
+    },
+    {
+      "slug": "saint-lary",
+      "name": "Saint-Lary",
+      "country": "FR",
+      "osm": "relation/2926613",
+      "terrain_max_zoom": 13
+    },
+    {
+      "slug": "devoluy",
+      "name": "Dévoluy",
+      "country": "FR",
+      "osm": "relation/8012984",
+      "terrain_max_zoom": 13
+    },
+    {
+      "slug": "la-rosiere",
+      "name": "La Rosière",
+      "country": "FR",
+      "osm": "relation/5752780",
+      "terrain_max_zoom": 13
+    },
+    {
+      "slug": "skicircus-saalbach",
+      "name": "Skicircus Saalbach-Hinterglemm Leogang Fieberbrunn",
+      "country": "AT",
+      "osm": "way/342018770",
+      "terrain_max_zoom": 13
+    },
+    {
+      "slug": "skiwelt-wilder-kaiser-brixental",
+      "name": "SkiWelt Wilder Kaiser - Brixental",
+      "country": "AT",
+      "osm": "relation/4643831",
+      "terrain_max_zoom": 13
+    },
+    {
+      "slug": "kitzski",
+      "name": "KitzSki",
+      "country": "AT",
+      "osm": "relation/10938000",
+      "terrain_max_zoom": 13
+    },
+    {
+      "slug": "schladming-dachstein",
+      "name": "Schladming Dachstein",
+      "country": "AT",
+      "osm": "relation/8896546",
+      "terrain_max_zoom": 13
+    },
+    {
+      "slug": "serfaus-fiss-ladis",
+      "name": "Serfaus Fiss Ladis",
+      "country": "AT",
+      "osm": "relation/5644297",
+      "terrain_max_zoom": 13
+    },
+    {
+      "slug": "silvretta-arena-ischgl-samnaun",
+      "name": "Silvretta Arena Ischgl/Samnaun",
+      "country": "AT",
+      "osm": "relation/3508010",
+      "terrain_max_zoom": 13
+    },
+    {
+      "slug": "zillertal-arena",
+      "name": "Zillertal Arena",
+      "country": "AT",
+      "osm": "way/539189765",
+      "terrain_max_zoom": 13
+    },
+    {
+      "slug": "kleinwalsertal-oberstdorf",
+      "name": "Kleinwalsertal-Oberstdorf",
+      "country": "AT",
+      "osm": "relation/7772597",
+      "terrain_max_zoom": 13
+    },
+    {
+      "slug": "mayrhofen-hippach",
+      "name": "Mayrhofen Hippach",
+      "country": "AT",
+      "osm": "way/539196496",
+      "terrain_max_zoom": 13
+    },
+    {
+      "slug": "skigebiet-damuls-mellau-faschina",
+      "name": "Skigebiet Damüls-Mellau-Faschina",
+      "country": "AT",
+      "osm": "relation/6940815",
+      "terrain_max_zoom": 13
+    },
+    {
+      "slug": "silvretta-montafon",
+      "name": "Silvretta Montafon",
+      "country": "AT",
+      "osm": "way/539421257",
+      "terrain_max_zoom": 13
+    },
+    {
+      "slug": "stubai",
+      "name": "Stubai",
+      "country": "AT",
+      "osm": "relation/7768194",
+      "terrain_max_zoom": 13
+    },
+    {
+      "slug": "obertauern",
+      "name": "Obertauern",
+      "country": "AT",
+      "osm": "relation/3165847",
+      "terrain_max_zoom": 13
+    },
+    {
+      "slug": "snow-space-salzburg",
+      "name": "Snow Space Salzburg",
+      "country": "AT",
+      "osm": "relation/15072985",
+      "terrain_max_zoom": 13
+    },
+    {
+      "slug": "hochkonig",
+      "name": "Hochkönig",
+      "country": "AT",
+      "osm": "way/342008514",
+      "terrain_max_zoom": 13
+    },
+    {
+      "slug": "hochzillertal-hochfugen",
+      "name": "Hochzillertal-Hochfügen",
+      "country": "AT",
+      "osm": "relation/5675207",
+      "terrain_max_zoom": 13
+    },
+    {
+      "slug": "ski-gastein",
+      "name": "Ski Gastein - Schlossalm/Angertal/Stubnerkogel",
+      "country": "AT",
+      "osm": "relation/14367673",
+      "terrain_max_zoom": 13
+    },
+    {
+      "slug": "nassfeld-mokrine",
+      "name": "Nassfeld, Mokrine",
+      "country": "AT",
+      "osm": "way/29463355",
+      "terrain_max_zoom": 13
+    },
+    {
+      "slug": "trysil",
+      "name": "Trysil",
+      "country": "NO",
+      "osm": "way/1210019615",
+      "terrain_max_zoom": 13
+    },
+    {
+      "slug": "oppdal-skisenter",
+      "name": "Oppdal Skisenter",
+      "country": "NO",
+      "osm": "way/1359304443",
+      "terrain_max_zoom": 13
+    },
+    {
+      "slug": "hafjell",
+      "name": "Hafjell",
+      "country": "NO",
+      "osm": "way/268326089",
+      "terrain_max_zoom": 13
+    },
+    {
+      "slug": "kvitfjell",
+      "name": "Kvitfjell",
+      "country": "NO",
+      "osm": "way/1466199986",
+      "terrain_max_zoom": 13
+    },
+    {
+      "slug": "ski-geilo",
+      "name": "Ski Geilo",
+      "country": "NO",
+      "osm": "relation/17004845",
+      "terrain_max_zoom": 13
+    },
+    {
+      "slug": "hovden-alpinsenter",
+      "name": "Hovden Alpinsenter",
+      "country": "NO",
+      "osm": "way/1465306137",
+      "terrain_max_zoom": 13
+    },
+    {
+      "slug": "myrkdalen",
+      "name": "Myrkdalen",
+      "country": "NO",
+      "osm": "way/1252351535",
+      "terrain_max_zoom": 13
+    },
+    {
+      "slug": "voss-resort-fjellheisar",
+      "name": "Voss Resort Fjellheisar",
+      "country": "NO",
+      "osm": "relation/4107373",
+      "terrain_max_zoom": 13
+    },
+    {
+      "slug": "strandafjellet",
+      "name": "Strandafjellet",
+      "country": "NO",
+      "osm": "way/391682955",
+      "terrain_max_zoom": 13
+    },
+    {
+      "slug": "hogevarde",
+      "name": "Høgevarde",
+      "country": "NO",
+      "osm": "way/257732538",
+      "terrain_max_zoom": 13
+    },
+    {
+      "slug": "gaustablikk-skisenter",
+      "name": "Gaustablikk Skisenter",
+      "country": "NO",
+      "osm": "way/577833539",
+      "terrain_max_zoom": 13
+    },
+    {
+      "slug": "grong-skisenter",
+      "name": "Grong skisenter",
+      "country": "NO",
+      "osm": "relation/9292730",
+      "terrain_max_zoom": 13
+    },
+    {
+      "slug": "tyin-filefjell",
+      "name": "Tyin-Filefjell",
+      "country": "NO",
+      "osm": "way/1257436350",
+      "terrain_max_zoom": 13
+    },
+    {
+      "slug": "skeikampen-alpinsenter",
+      "name": "Skeikampen Alpinsenter",
+      "country": "NO",
+      "osm": "relation/7561888",
+      "terrain_max_zoom": 13
+    },
+    {
+      "slug": "bjorli-skisenter",
+      "name": "Bjorli Skisenter",
+      "country": "NO",
+      "osm": "relation/7909071",
+      "terrain_max_zoom": 13
+    },
+    {
+      "slug": "uvdal-alpinpark",
+      "name": "Uvdal Alpinpark",
+      "country": "NO",
+      "osm": "way/783572851",
+      "terrain_max_zoom": 13
+    },
+    {
+      "slug": "nesfjellet-alpinsenter",
+      "name": "Nesfjellet Alpinsenter",
+      "country": "NO",
+      "osm": "relation/10819804",
+      "terrain_max_zoom": 13
+    },
+    {
+      "slug": "vassfjellet-skisenter",
+      "name": "Vassfjellet skisenter",
+      "country": "NO",
+      "osm": "way/22923382",
+      "terrain_max_zoom": 13
+    },
+    {
+      "slug": "eikedalen-skisenter",
+      "name": "Eikedalen skisenter",
+      "country": "NO",
+      "osm": "relation/5225810",
+      "terrain_max_zoom": 13
+    }
   ]
 }
