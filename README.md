@@ -36,7 +36,9 @@ section 4.6 of the ODbL: it publishes the method that produces the derived data,
 4. `scripts/build_packages.py`: for each area, run step 2, cut the basemap of the newest daily Protomaps build (zoom
    0–15) and Mapterhorn's terrain (the planet file to zoom 12, and each regional zoom-13 file the area touches) with
    `pmtiles extract --bbox --maxzoom`, then `scripts/write_manifest.py`: dated file names, SHA-256 checksums,
-   `manifest.json` and the area's entry in the packages' `index.json`.
+   `manifest.json` and the area's entry in the packages' `index.json`. When `areas.json` says the resort's own piste
+   map may be shown (`official_map.show_image`), `scripts/fetch_official.py` first renders it from the file the resort
+   publishes – [docs/manifest.md](docs/manifest.md), "The resort's own piste map".
 
 Choosing areas: `scripts/rank_areas.py` ranks the operating ski areas of some countries by their length of downhill
 runs. It leaves out an area when most of its runs belong to a bigger area ranked above it (Courchevel inside Les Trois
@@ -44,7 +46,8 @@ Vallées), leaves out lift-pass alliances of separate areas (Ski amadé – its 
 area across a border in the country where most of its runs are.
 
 Everything runs on the Python standard library, plus the [pmtiles CLI](https://github.com/protomaps/go-pmtiles) for
-cutting archives. No package needs installing.
+cutting archives and, only for the resorts' own piste maps, `pdftoppm` (poppler-utils), `cwebp` (webp) and ImageMagick.
+No Python package needs installing.
 
 ```bash
 python -I scripts/rank_areas.py data/openskidata.gpkg 20 FR AT NO > out/ranking.json

@@ -6,8 +6,9 @@ Usage:
       OUT_DIR/SLUG/ holds what the other steps made: overlay.geojson, base.pmtiles, terrain-low.pmtiles (zoom 0-12)
       and terrain-z13*.pmtiles (zoom 13 – one per Mapterhorn region the area touches); PACKAGES_DIR/SLUG/ receives the package, PACKAGES_DIR/index.json the entry.
       The resort's own piste map (areas.json 'official_map') is always linked. Its image (OUT_DIR/SLUG/official.webp,
-      rendered from the resort's PDF) goes into the package only when 'image_permission' is true – the resort's written
-      permission – or with --local, for a package that never leaves the developer's machine.
+      rendered by fetch_official.py) goes into the package only when 'show_image' is true – the owner's decision, with
+      the resort's answer in 'permission'; a refusal always keeps it out – or with --local, for a package that never
+      leaves the developer's machine.
       The area's lift-status source (areas.json 'status', e.g. {"source": "fnugg", "id": 2}) goes into its index entry,
       where PEAK reads it; only the source's name and a number – the server builds the URL itself.
 Manifest format: docs/manifest.md.
@@ -89,7 +90,8 @@ def main():
     if official:
         manifest["official_map"] = {k: official[k] for k in ("credit", "page_url", "pdf_url") if official.get(k)}
         image = os.path.join(src, "official.webp")
-        if os.path.exists(image) and (official.get("image_permission") or local):
+        refused = (official.get("permission") or {}).get("status") == "refused"
+        if os.path.exists(image) and not refused and (official.get("show_image") or local):
             target = f"{slug}-official-{date}.webp"
             shutil.copyfile(image, os.path.join(dest, target))
             w, h = official.get("image_size", [0, 0]) if official.get("image_size") else webp_size(image)

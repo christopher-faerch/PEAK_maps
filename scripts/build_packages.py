@@ -52,6 +52,7 @@ def main():
     planet = next(i for i in terrain if i["name"] == "planet.pmtiles")
     regions = [i for i in terrain if i["name"] != "planet.pmtiles" and i["min_zoom"] <= 13 <= i["max_zoom"]]
     summary = {"date": date, "protomaps": build, "built": [], "failed": []}
+    cfg = {a["slug"]: a for a in json.load(open(areas_file, encoding="utf-8"))["areas"]}
     for slug in slugs:
         src = os.path.join(out_root, slug)
         try:
@@ -70,6 +71,16 @@ def main():
                     out = os.path.join(src, "terrain-z13-" + region["name"].removesuffix(".pmtiles") + ".pmtiles")
                     if extract(pmtiles, region["url"], out, part, 13) < 1024:  # an empty cut (sea, no data) is left out
                         os.remove(out)
+            official = os.path.join(src, "official.webp")  # the resort's own piste map, when the owner shows it
+            if (cfg.get(slug, {}).get("official_map") or {}).get("show_image"):
+                fetched = subprocess.run([sys.executable, "-I", os.path.join(HERE, "fetch_official.py"), areas_file, out_root, slug],
+                                         capture_output=True, text=True)
+                if fetched.returncode != 0:  # the package is still built – without the picture, never with a stale one
+                    if os.path.exists(official):
+                        os.remove(official)
+                    summary.setdefault("warnings", []).append({"slug": slug, "official_map": fetched.stdout.strip()[-300:]})
+            elif os.path.exists(official):
+                os.remove(official)
             done = subprocess.run([sys.executable, "-I", os.path.join(HERE, "write_manifest.py"), os.path.join(src, "area.json"),
                                    packages, date, build, areas_file], check=True, capture_output=True, text=True)
             summary["built"].append(json.loads(done.stdout.strip().splitlines()[-1]))

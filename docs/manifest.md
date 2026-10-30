@@ -45,6 +45,17 @@ File names carry the build date, so a new build is a new file and caches can kee
 | `attribution` | Shown on the map, also offline |
 | `min_app_version` | Oldest app that can read the package |
 
+## The resort's own piste map (`official_map`)
+
+When `areas.json` has an `official_map` for the area, the manifest carries its `credit`, `page_url` and `pdf_url`
+(whichever are set): PEAK's map always links to the resort's own map. The picture itself – `official_map.image` with
+`path`, `width`, `height`, `bytes` and `sha256` – is in the package only when `areas.json` says `show_image: true`,
+the owner's decision, recorded next to the resort's answer in `permission` (`status` granted / asked / refused, `date`,
+`from` or `to`, `note`); a refusal always keeps the picture out. `scripts/fetch_official.py` renders it from the file
+the resort publishes (`pdf_url` with the page number `page`, or `image_url`), unchanged but for the resolution: the long
+edge is at most 6000 px, saved as WebP. The picture is the resort's copyright and is not covered by this repository's
+licence.
+
 ## The area index
 
 `index.json` lists every published area: `slug`, `name`, `country`, `bbox`, `run_km`, `lifts`, `version`, `bytes`,

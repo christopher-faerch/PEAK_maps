@@ -12,7 +12,13 @@
         "credit": "© Les 3 Vallées",
         "page_url": "https://www.les3vallees.com/en/guide/the-world-s-largest-ski-area/ski-area-map",
         "pdf_url": "https://www.les3vallees.com/media/download/plan-3-vallees-pdf.pdf",
-        "image_permission": false
+        "show_image": true,
+        "permission": {
+          "status": "asked",
+          "date": "2026-10-23",
+          "to": "media@les3vallees.com",
+          "note": "Ejerens beslutning 30. okt. 2026: vises, mens svaret afventes; tages ned ved et nej"
+        }
       }
     },
     {
@@ -27,7 +33,18 @@
       "name": "Ski Arlberg (St. Anton, Lech, Zürs)",
       "country": "AT",
       "osm": "way/539407909",
-      "terrain_max_zoom": 13
+      "terrain_max_zoom": 13,
+      "official_map": {
+        "credit": "© Ski Arlberg",
+        "page_url": "https://www.skiarlberg.at/de/lech-zuers/presse/materialien",
+        "show_image": false,
+        "permission": {
+          "status": "asked",
+          "date": "2026-10-23",
+          "to": "marketing@skiarlberg.at",
+          "note": "Ingen kortfil fundet endnu – kun link. Ejerens beslutning 30. okt. 2026: vises, mens svaret afventes; tages ned ved et nej"
+        }
+      }
     },
     {
       "slug": "hemsedal",
@@ -38,6 +55,17 @@
       "status": {
         "source": "fnugg",
         "id": 5
+      },
+      "official_map": {
+        "credit": "© SkiStar",
+        "page_url": "https://www.skistar.com/no/vare-skisteder/hemsedal/vinter-i-hemsedal/kart/",
+        "show_image": false,
+        "permission": {
+          "status": "refused",
+          "date": "2026-10-26",
+          "from": "Lennart Stolpe, SkiStar <press@skistar.com>",
+          "note": "Pistekortene må kun udgives i SkiStars egne kanaler"
+        }
       }
     },
     {
@@ -45,14 +73,38 @@
       "name": "Les Portes du Soleil",
       "country": "FR",
       "osm": "relation/19457834",
-      "terrain_max_zoom": 13
+      "terrain_max_zoom": 13,
+      "official_map": {
+        "credit": "© Les Portes du Soleil",
+        "page_url": "https://www.portesdusoleil.com/en-hiver/plan-des-pistes/",
+        "pdf_url": "https://www.portesdusoleil.com/app/uploads/lesportesdusoleil/2025/10/PDS_PLAN_HIVER_PDS.pdf",
+        "show_image": true,
+        "permission": {
+          "status": "asked",
+          "date": "2026-10-23",
+          "to": "communication@portesdusoleil.com",
+          "note": "26. okt.: Mélanie Prévost spurgte, hvad vi vil vise – svar sendt af ejeren. Ejerens beslutning 30. okt. 2026: vises, mens svaret afventes; tages ned ved et nej"
+        }
+      }
     },
     {
       "slug": "paradiski",
       "name": "Paradiski",
       "country": "FR",
       "osm": "way/1227560922",
-      "terrain_max_zoom": 13
+      "terrain_max_zoom": 13,
+      "official_map": {
+        "credit": "© Paradiski",
+        "page_url": "https://en.la-plagne.com/discover/ski-area/piste-map",
+        "pdf_url": "https://www.la-plagne.com/sites/default/files/brochures/pdf/PlanPistesParadiski2026_compressed.pdf",
+        "show_image": true,
+        "permission": {
+          "status": "asked",
+          "date": "2026-10-23",
+          "to": "info@ski-laplagne.com, contact.ads@compagniedesalpes.fr",
+          "note": "Ejerens beslutning 30. okt. 2026: vises, mens svaret afventes; tages ned ved et nej"
+        }
+      }
     },
     {
       "slug": "evasion-mont-blanc",
@@ -66,7 +118,19 @@
       "name": "Tignes - Val d'Isère",
       "country": "FR",
       "osm": "way/45421423",
-      "terrain_max_zoom": 13
+      "terrain_max_zoom": 13,
+      "official_map": {
+        "credit": "© Tignes – Val d'Isère",
+        "page_url": "https://www.tignes.net/ski/domaine-skiable/plan-des-pistes",
+        "pdf_url": "https://public.tignes.net/TIGNES.NET/BROCHURES/PLAN_DES_PISTES.pdf",
+        "show_image": true,
+        "permission": {
+          "status": "asked",
+          "date": "2026-10-23",
+          "to": "clenfant@tignes.net",
+          "note": "Mailen holdes tilbage af Mailinblack, til ejeren bekræfter. Ejerens beslutning 30. okt. 2026: vises, mens svaret afventes; tages ned ved et nej"
+        }
+      }
     },
     {
       "slug": "espace-haute-maurienne-vanoise",
@@ -101,7 +165,20 @@
       "name": "Alpe d'Huez Grand Domaine",
       "country": "FR",
       "osm": "way/45438982",
-      "terrain_max_zoom": 13
+      "terrain_max_zoom": 13,
+      "official_map": {
+        "credit": "© Alpe d'Huez Grand Domaine",
+        "page_url": "https://www.alpedhuez.com/fr/activites/plans/",
+        "pdf_url": "https://www.alpedhuez.com/wp-content/uploads/2025/11/PLAN-DES-PISTES-HIVER-2025-2026.pdf",
+        "page": 2,
+        "show_image": true,
+        "permission": {
+          "status": "asked",
+          "date": "2026-10-23",
+          "to": "info@alpedhuez.com",
+          "note": "29. okt.: videresendt til liftselskabet (Kaltra Rustemi, Amandine Maillard). Ejerens beslutning 30. okt. 2026: vises, mens svaret afventes; tages ned ved et nej"
+        }
+      }
     },
     {
       "slug": "serre-chevalier",
@@ -178,21 +255,58 @@
       "name": "Skicircus Saalbach-Hinterglemm Leogang Fieberbrunn",
       "country": "AT",
       "osm": "way/342018770",
-      "terrain_max_zoom": 13
+      "terrain_max_zoom": 13,
+      "official_map": {
+        "credit": "© Saalbach Hinterglemm Leogang Fieberbrunn",
+        "page_url": "https://www.saalbach.com/de/winter/skigebiet/pistenplan",
+        "image_url": "https://www.saalbach.com/de/download__9564856",
+        "show_image": true,
+        "permission": {
+          "status": "asked",
+          "date": "2026-10-23",
+          "to": "presse@saalbach.com",
+          "note": "Ejerens beslutning 30. okt. 2026: vises, mens svaret afventes; tages ned ved et nej"
+        }
+      }
     },
     {
       "slug": "skiwelt-wilder-kaiser-brixental",
       "name": "SkiWelt Wilder Kaiser - Brixental",
       "country": "AT",
       "osm": "relation/4643831",
-      "terrain_max_zoom": 13
+      "terrain_max_zoom": 13,
+      "official_map": {
+        "credit": "© SkiWelt Wilder Kaiser - Brixental",
+        "page_url": "https://media.skiwelt.at/de/skiwelt-winter-panorama.html",
+        "pdf_url": "https://media.skiwelt.at/media/panorama/winter/SkiWelt-Panorama-26-27-EN.pdf",
+        "show_image": true,
+        "permission": {
+          "status": "granted",
+          "date": "2026-10-28",
+          "from": "SkiWelt Presse <presse@skiwelt.at>",
+          "note": "Krediteringen skal være det fulde navn: SkiWelt Wilder Kaiser - Brixental"
+        }
+      }
     },
     {
       "slug": "kitzski",
       "name": "KitzSki",
       "country": "AT",
       "osm": "relation/10938000",
-      "terrain_max_zoom": 13
+      "terrain_max_zoom": 13,
+      "official_map": {
+        "credit": "© KitzSki",
+        "page_url": "https://www.kitzski.at/de/service-info/publikationen-downloads.html",
+        "pdf_url": "https://www.kitzski.at/media/blaetterkataloge/winterinfoplan/KitzSKi-WinterinfoPlan-2026-27-DE-WEB-750x318-75x1063mm-1.pdf",
+        "page": 2,
+        "show_image": true,
+        "permission": {
+          "status": "asked",
+          "date": "2026-10-23",
+          "to": "info@kitzski.at",
+          "note": "Kun automatisk kvittering. Ejerens beslutning 30. okt. 2026: vises, mens svaret afventes; tages ned ved et nej"
+        }
+      }
     },
     {
       "slug": "schladming-dachstein",
@@ -308,6 +422,17 @@
       "status": {
         "source": "fnugg",
         "id": 2
+      },
+      "official_map": {
+        "credit": "© SkiStar",
+        "page_url": "https://www.skistar.com/no/vare-skisteder/trysil/vinter-i-trysil/kart/",
+        "show_image": false,
+        "permission": {
+          "status": "refused",
+          "date": "2026-10-26",
+          "from": "Lennart Stolpe, SkiStar <press@skistar.com>",
+          "note": "Pistekortene må kun udgives i SkiStars egne kanaler"
+        }
       }
     },
     {
@@ -319,6 +444,17 @@
       "status": {
         "source": "fnugg",
         "id": 78
+      },
+      "official_map": {
+        "credit": "© Alpinco",
+        "page_url": "https://www.alpinco.com/no/oppdal/loypekart",
+        "image_url": "https://www.alpinco.com/sites/cb_alpincoweb/files/Oppdal_skimap_symbol_logo_1.7.0_web2000px.jpg",
+        "show_image": true,
+        "permission": {
+          "status": "granted",
+          "date": "2026-10-26",
+          "from": "Amanda Wold Kortnes, Alpinco <amanda@alpinco.no>"
+        }
       }
     },
     {
@@ -330,6 +466,17 @@
       "status": {
         "source": "fnugg",
         "id": 12
+      },
+      "official_map": {
+        "credit": "© Alpinco",
+        "page_url": "https://www.alpinco.com/no/hafjell/loypekart",
+        "image_url": "https://www.alpinco.com/sites/cb_alpincoweb/files/Hafjell_piste_symbol_right_1.8.7_print.web_1.jpg",
+        "show_image": true,
+        "permission": {
+          "status": "granted",
+          "date": "2026-10-26",
+          "from": "Amanda Wold Kortnes, Alpinco <amanda@alpinco.no>"
+        }
       }
     },
     {
@@ -341,6 +488,17 @@
       "status": {
         "source": "fnugg",
         "id": 13
+      },
+      "official_map": {
+        "credit": "© Alpinco",
+        "page_url": "https://www.alpinco.com/no/kvitfjell/loypekart",
+        "image_url": "https://www.alpinco.com/sites/cb_alpincoweb/files/Kvitfjell_skimap_symbol_logo_4.2_web2000px.jpg",
+        "show_image": true,
+        "permission": {
+          "status": "granted",
+          "date": "2026-10-26",
+          "from": "Amanda Wold Kortnes, Alpinco <amanda@alpinco.no>"
+        }
       }
     },
     {
